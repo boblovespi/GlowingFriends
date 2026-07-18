@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "bob-glowing-friends",
+	"version": "${version}",
+	
+	"name": "Glowing Friends",
+	"description": "Makes your friends glow.",
+	"authors": ["boblovespi"],
+	"contact": {},
+	
+	"license": "GPL-3.0-only",
+	"icon": "assets/bob-glowing-friends/icon.png",
+	
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"boblovespi.glowingfriends.client.GlowingFriendsClient"
+		],
+		"modmenu": [
+			"boblovespi.glowingfriends.client.ModMenuHandler"
+		]
+	},
+	
+	"mixins": [
+		"bob-glowing-friends.mixins.json", {
+			"config": "bob-glowing-friends.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	
+	"depends": {
+		"fabricloader": ">=${loader_version}",
+		"fabric-api": "*",
+		"minecraft": "${minecraft_version}",
+		"yet_another_config_lib_v3": ">=${yacl_version}"
+	}
+}
