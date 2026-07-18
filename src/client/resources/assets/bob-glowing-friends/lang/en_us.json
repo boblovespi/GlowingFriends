@@ -1,0 +1,5 @@
+{
+	"bob-glowing-friends.config.name": "Config",
+	"bob-glowing-friends.config.friends_list.name": "Friends list",
+	"bob-glowing-friends.config.friends_list.tooltip": "The list of your friends IGNs and what color they should glow."
+}
