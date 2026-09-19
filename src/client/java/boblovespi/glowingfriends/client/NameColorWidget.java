@@ -4,7 +4,7 @@ import dev.isxander.yacl3.api.utils.Dimension;
 import dev.isxander.yacl3.gui.AbstractWidget;
 import dev.isxander.yacl3.gui.controllers.ColorController;
 import dev.isxander.yacl3.gui.controllers.string.StringControllerElement;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.events.ContainerEventHandler;
 import net.minecraft.client.gui.components.events.GuiEventListener;
 import org.jetbrains.annotations.Nullable;
@@ -31,10 +31,10 @@ public class NameColorWidget extends AbstractWidget implements ContainerEventHan
 	}
 
 	@Override
-	public void render(GuiGraphics graphics, int x, int y, float delta)
+	public void extractRenderState(GuiGraphicsExtractor graphics, int x, int y, float delta)
 	{
-		nameWidget.render(graphics, x, y, delta);
-		colorWidget.render(graphics, x, y, delta);
+		nameWidget.extractRenderState(graphics, x, y, delta);
+		colorWidget.extractRenderState(graphics, x, y, delta);
 	}
 
 	@Override

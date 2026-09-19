@@ -23,9 +23,11 @@ public abstract class EntityMixin
 	{
 		if (getTeam() != null && getTeam().getColor().getColor() != null)
 			return;
+		// intellij doesn't know about mixins
+		//noinspection ConstantValue
 		if ((Object) this instanceof AbstractClientPlayer player)
 		{
-			var name = player.getGameProfile().getName();
+			var name = player.getGameProfile().name();
 			if (Config.HANDLER.instance().friends.containsKey(name))
 				cir.setReturnValue(Config.HANDLER.instance().friends.get(name));
 		}
