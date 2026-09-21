@@ -1,5 +1,7 @@
 {
 	"bob-glowing-friends.config.name": "Config",
 	"bob-glowing-friends.config.friends_list.name": "Friends list",
-	"bob-glowing-friends.config.friends_list.tooltip": "The list of your friends IGNs and what color they should glow."
+	"bob-glowing-friends.config.friends_list.tooltip": "The list of your friends IGNs and what color they should glow.",
+	"bob-glowing-friends.config.ignore_team_colors.name": "Ignore team colors",
+	"bob-glowing-friends.config.ignore_team_colors.tooltip": "If team colors should be ignored when making your friends glow."
 }
