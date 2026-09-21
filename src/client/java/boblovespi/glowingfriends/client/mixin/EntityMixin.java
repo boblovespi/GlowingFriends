@@ -21,11 +21,12 @@ public abstract class EntityMixin
 	@Inject(method = "getTeamColor()I", at = @At("RETURN"), cancellable = true)
 	public void onGetTeamColor(CallbackInfoReturnable<Integer> cir)
 	{
-		if (getTeam() != null && getTeam().getColor().getColor() != null)
+		if (getTeam() != null && getTeam().getColor().getColor() != null && getTeam().getColor().getColor() != 0xffffff)
 			return;
 		if ((Object) this instanceof AbstractClientPlayer player)
 		{
 			var name = player.getGameProfile().name();
+			// GlowingFriends.LOGGER.info("player: {} color: {} team: {}", name, String.format("%06x", Config.HANDLER.instance().friends.getOrDefault(name, 0xdead00)), getTeam() == null ? "no team" : getTeam().getName());
 			if (Config.HANDLER.instance().friends.containsKey(name))
 				cir.setReturnValue(Config.HANDLER.instance().friends.get(name));
 		}
