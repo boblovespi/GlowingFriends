@@ -17,7 +17,7 @@ public abstract class MinecraftMixin
 	{
 		if (entity instanceof AbstractClientPlayer player)
 		{
-			var name = player.getGameProfile().getName();
+			var name = player.getGameProfile().name();
 			if (Config.HANDLER.instance().friends.containsKey(name))
 				cir.setReturnValue(true);
 		}

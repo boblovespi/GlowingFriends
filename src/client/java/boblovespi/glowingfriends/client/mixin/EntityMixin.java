@@ -25,7 +25,7 @@ public abstract class EntityMixin
 			return;
 		if ((Object) this instanceof AbstractClientPlayer player)
 		{
-			var name = player.getGameProfile().getName();
+			var name = player.getGameProfile().name();
 			if (Config.HANDLER.instance().friends.containsKey(name))
 				cir.setReturnValue(Config.HANDLER.instance().friends.get(name));
 		}
