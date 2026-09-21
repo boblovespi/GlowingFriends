@@ -7,6 +7,9 @@ import dev.isxander.yacl3.gui.controllers.string.StringControllerElement;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.events.ContainerEventHandler;
 import net.minecraft.client.gui.components.events.GuiEventListener;
+import net.minecraft.client.input.CharacterEvent;
+import net.minecraft.client.input.KeyEvent;
+import net.minecraft.client.input.MouseButtonEvent;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -76,5 +79,35 @@ public class NameColorWidget extends AbstractWidget implements ContainerEventHan
 		var colorDim = dim.clone().withWidth(halfWidth).withX(dim.x() + halfWidth);
 		nameWidget.setDimension(nameDim);
 		colorWidget.setDimension(colorDim);
+	}
+
+	public boolean mouseClicked(MouseButtonEvent mouseButtonEvent, boolean doubleClick)
+	{
+		return ContainerEventHandler.super.mouseClicked(mouseButtonEvent, doubleClick);
+	}
+
+	public boolean mouseReleased(MouseButtonEvent mouseButtonEvent)
+	{
+		return ContainerEventHandler.super.mouseReleased(mouseButtonEvent);
+	}
+
+	public boolean mouseDragged(MouseButtonEvent mouseButtonEvent, double dx, double dy)
+	{
+		return ContainerEventHandler.super.mouseDragged(mouseButtonEvent, dx, dy);
+	}
+
+	public boolean keyPressed(KeyEvent keyEvent)
+	{
+		return ContainerEventHandler.super.keyPressed(keyEvent);
+	}
+
+	public boolean keyReleased(KeyEvent keyEvent)
+	{
+		return ContainerEventHandler.super.keyReleased(keyEvent);
+	}
+
+	public boolean charTyped(CharacterEvent characterEvent)
+	{
+		return ContainerEventHandler.super.charTyped(characterEvent);
 	}
 }
