@@ -21,7 +21,8 @@ public class Config
 																													 .setJson5(true)
 																													 .build())
 																		 .build();
-
+	@SerialEntry
+	public boolean ignoreTeamColors = false;
 	@SerialEntry
 	public Map<String, Integer> friends = new LinkedHashMap<>();
 }

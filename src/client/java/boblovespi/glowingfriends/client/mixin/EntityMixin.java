@@ -21,7 +21,7 @@ public abstract class EntityMixin
 	@Inject(method = "getTeamColor()I", at = @At("RETURN"), cancellable = true)
 	public void onGetTeamColor(CallbackInfoReturnable<Integer> cir)
 	{
-		if (getTeam() != null && getTeam().getColor().getColor() != null)
+		if (!Config.HANDLER.instance().ignoreTeamColors && (getTeam() != null && getTeam().getColor().getColor() != null))
 			return;
 		// intellij doesn't know about mixins
 		//noinspection ConstantValue
